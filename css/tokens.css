@@ -1,0 +1,46 @@
+:root {
+  color-scheme: light;
+  --cor-primaria: #2E7D32;
+  --cor-primaria-escura: #1B5E20;
+  --cor-primaria-clara: #E8F5E9;
+  --cor-sobre-primaria: #FFFFFF;
+  --cor-secundaria: #F5A028;
+  --cor-secundaria-hover: #E08A0B;
+  --cor-destaque: #1565C0;
+  --cor-texto: #1F2933;
+  --cor-texto-suave: #52606D;
+  --cor-borda: #CBD2D9;
+  --cor-borda-campo: #52606D;
+  --cor-fundo: #FFFFFF;
+  --cor-fundo-alt: #F5F7FA;
+  --cor-erro: #C62828;
+  --cor-erro-clara: #FDECEA;
+  --cor-aviso: #8A5A00;
+  --cor-aviso-clara: #FFF4E0;
+  --cor-info-clara: #E3F0FC;
+
+  --fonte-titulo: "Nunito", system-ui, sans-serif;
+  --fonte-texto: "Open Sans", system-ui, sans-serif;
+  --fs-100: 0.875rem;
+  --fs-200: 1rem;
+  --fs-300: 1.25rem;
+  --fs-400: 1.563rem;
+  --fs-500: 1.953rem;
+  --fs-600: clamp(2rem, 1.5rem + 2vw, 2.441rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
+
+  --raio: 8px;
+  --raio-pilula: 999px;
+  --sombra-card: 0 4px 12px rgba(31, 41, 51, 0.12);
+  --sombra-modal: 0 16px 40px rgba(31, 41, 51, 0.24);
+  --transicao: 200ms ease;
+  --cor-foco: #1565C0;
+  --foco: 3px solid var(--cor-foco);
+}

@@ -14,6 +14,7 @@ Projeto desenvolvido nas Experiências Práticas I a IV da disciplina de Desenvo
 - Rascunho do cadastro salvo automaticamente no navegador
 - Gráfico de transparência da aplicação dos recursos, com tabela acessível
 - Temas claro, escuro e alto contraste
+- Fotos responsivas servidas pela CDN do Unsplash em WebP e JPEG, com `srcset` de 400 a 1600 px
 
 ## Tecnologias
 
@@ -33,7 +34,7 @@ Projeto desenvolvido nas Experiências Práticas I a IV da disciplina de Desenvo
 semear-futuro/
 ├── html/            index.html (casca da SPA e templates)
 ├── css/             tokens, layout, navegação, componentes e feedback
-├── img/             imagens em WebP e JPEG, em 400 e 800 px
+├── img/             logotipo (as fotos vêm da CDN do Unsplash)
 ├── js/
 │   ├── main.js      ponto de entrada
 │   ├── router/      roteamento por hash
@@ -105,6 +106,18 @@ Para contribuir:
 2. Faça commits pequenos no padrão Conventional Commits
 3. Abra um pull request para a `develop` preenchendo o template
 4. O CI roda testes, build e Lighthouse. O merge só acontece com tudo aprovado
+
+## Créditos das fotos
+
+Todas as fotos são do [Unsplash](https://unsplash.com) e seguem a [Licença Unsplash](https://unsplash.com/license), que permite uso gratuito. Os dados de cada foto ficam em `js/data/fotos.js`.
+
+| Onde aparece | Fotógrafo |
+| --- | --- |
+| Destaque da página inicial | Church of the King |
+| Quem somos | Felicia Montenegro |
+| Reforço Escolar | Adam Winger |
+| Horta Comunitária Viva | Filip Urban |
+| Código Jovem | John Schnobrich |
 
 ## Licença e contato
 

@@ -2,6 +2,20 @@
 
 Todas as mudanças relevantes deste projeto são registradas aqui. O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o projeto usa [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.1.0]
+
+### Adicionado
+- Página inicial com destaque em foto, números da ONG, projetos em andamento e faixa de chamada para voluntários
+- Fotos reais do Unsplash, com `srcset` em WebP e JPEG
+- Cadastro em duas colunas com etapas do voluntariado ao lado do formulário
+- Rodapé com contato, navegação e créditos das fotos
+
+### Corrigido
+- Coluna do formulário ocupando só uma coluna do grid por causa da classe `lg-start-3`
+- Opções de "Como quero ajudar" transformadas em cartões clicáveis alinhados
+- Margem padrão de `figure` desalinhando a imagem da página inicial
+- Cabeçalho no celular com o seletor de tema e o menu na mesma linha
+
 ## [1.0.0]
 
 ### Adicionado

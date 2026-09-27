@@ -40,11 +40,17 @@
 .modal__fechar { min-width: 44px; min-height: 44px; background: none; border: 0; font-size: var(--fs-400); color: var(--cor-texto-suave); cursor: pointer; border-radius: var(--raio); }
 .modal__acoes { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-3); margin-top: var(--space-5); }
 
-.hero { padding-block: var(--space-5); }
-.site-footer { background: var(--cor-fundo-alt); border-top: 1px solid var(--cor-borda); padding-block: var(--space-5); }
-.site-footer__inner { display: flex; flex-direction: column; gap: var(--space-4); }
+.site-footer { background: var(--cor-fundo-alt); border-top: 1px solid var(--cor-borda); padding-top: var(--space-6); font-size: var(--fs-100); }
+.site-footer__inner { display: grid; gap: var(--space-5); }
 .site-footer address { font-style: normal; }
-.site-footer p { margin: 0; }
+.site-footer p { margin: 0 0 var(--space-2); }
+.site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.site-footer__marca img { margin-bottom: var(--space-3); }
+.site-footer__titulo { font-weight: 800; font-family: var(--fonte-titulo); font-size: var(--fs-200); }
+.site-footer__base { margin-top: var(--space-5); padding-block: var(--space-4); border-top: 1px solid var(--cor-borda); }
+@media (min-width: 768px) {
+  .site-footer__inner { grid-template-columns: 2fr 1.5fr 1fr; }
+}
 
 @media (forced-colors: active) {
   .btn, .badge, .alerta, .card { border: 2px solid CanvasText; }

@@ -1,0 +1,19 @@
+{
+  "name": "semear-futuro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Plataforma web da ONG Semear Futuro: projetos, doações e cadastro de voluntários.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0",
+    "vite-plugin-html": "^3.2.2",
+    "vitest": "^2.1.0"
+  },
+  "license": "MIT"
+}

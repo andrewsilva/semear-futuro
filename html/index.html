@@ -5,60 +5,226 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ONG Semear Futuro: educação e tecnologia para crianças e adolescentes de Porto Alegre.">
   <title>Semear Futuro | Início</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/navegacao.css">
   <link rel="stylesheet" href="../css/componentes.css">
   <link rel="stylesheet" href="../css/feedback.css">
+  <link rel="icon" href="../img/logo-semear-futuro.png">
 </head>
 <body>
-  <header>
-    <a href="index.html"><img src="../img/logo-semear-futuro.png" alt="Logotipo da ONG Semear Futuro" width="160" height="60"></a>
-    <nav aria-label="Navegação principal">
-      <ul>
-        <li><a href="index.html" aria-current="page">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Seja voluntário</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#/inicio" class="logo"><img src="../img/logo-semear-futuro.png" alt="Semear Futuro, página inicial" width="160" height="60"></a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list" id="menu-principal">
+          <li><a href="#/inicio">Início</a></li>
+          <li class="has-submenu">
+            <a href="#/projetos">Projetos</a>
+            <ul class="submenu">
+              <li><a href="#/projetos">Reforço Escolar</a></li>
+              <li><a href="#/projetos">Horta Comunitária Viva</a></li>
+              <li><a href="#/projetos">Código Jovem</a></li>
+            </ul>
+          </li>
+          <li><a href="#/cadastro" class="nav-destaque">Seja voluntário</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <main>
-    <h1>Semear Futuro</h1>
-    <p>Educação e oportunidade para crianças e adolescentes da zona norte de Porto Alegre desde 2014.</p>
-    <section id="quem-somos">
-      <h2>Quem somos</h2>
-      <figure>
+
+  <main id="app" class="container" tabindex="-1"></main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <address>
+        <p>Rua das Acácias, 245, Bairro Esperança, Porto Alegre, RS, CEP 91000-000</p>
+        <p>Telefone: <a href="tel:+555130000000">(51) 3000-0000</a> · E-mail: <a href="mailto:contato@semearfuturo.org.br">contato@semearfuturo.org.br</a></p>
+      </address>
+      <p><small>&copy; 2026 Semear Futuro. Organização da sociedade civil sem fins lucrativos.</small></p>
+    </div>
+  </footer>
+
+  <div class="toast-area" aria-live="polite"></div>
+
+  <div class="modal-fundo" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <div class="modal__cabecalho">
+        <h2 class="modal__titulo" id="modal-titulo">Confirmar inscrição</h2>
+        <button class="modal__fechar" type="button" data-fechar-modal aria-label="Fechar">&times;</button>
+      </div>
+      <p class="modal__texto"></p>
+      <div class="modal__acoes">
+        <button class="btn btn--contorno" type="button" data-fechar-modal>Cancelar</button>
+        <button class="btn" type="button" data-confirmar>Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <template id="tpl-inicio">
+    <section class="hero">
+      <h1 tabindex="-1">Semear Futuro</h1>
+      <p>Educação e oportunidade para crianças e adolescentes da zona norte de Porto Alegre desde 2014.</p>
+      <div class="cta-group">
+        <a class="btn btn--doar" href="#/projetos">Quero doar</a>
+        <a class="btn btn--contorno" href="#/cadastro">Quero ser voluntário</a>
+      </div>
+    </section>
+    <section class="grid secao" aria-labelledby="quem-somos">
+      <figure class="col-12 lg-col-7">
         <picture>
-          <source srcset="../img/oficina-leitura.webp" type="image/webp">
+          <source type="image/webp" srcset="../img/oficina-leitura.webp">
           <img src="../img/oficina-leitura.jpg" alt="Educadora lendo um livro em roda com seis crianças sentadas no chão da sala de atividades" width="800" height="450" loading="lazy">
         </picture>
         <figcaption>Roda de leitura do projeto Reforço Escolar.</figcaption>
       </figure>
-      <p>Somos uma organização sem fins lucrativos formada por educadores, famílias e voluntários. Atendemos cerca de 180 crianças e adolescentes no contraturno escolar, com atividades gratuitas.</p>
+      <div class="col-12 lg-col-5">
+        <h2 id="quem-somos">Quem somos</h2>
+        <p>Somos uma organização sem fins lucrativos formada por educadores, famílias e voluntários. Atendemos cerca de 180 crianças e adolescentes no contraturno escolar, com atividades gratuitas.</p>
+        <h3>Nossa missão</h3>
+        <p>Garantir que cada criança atendida tenha apoio para aprender, conviver e sonhar com o próprio futuro.</p>
+      </div>
     </section>
-    <section id="missao">
-      <h2>Nossa missão</h2>
-      <p>Garantir que cada criança atendida tenha apoio para aprender, conviver e sonhar com o próprio futuro.</p>
-      <h3>Valores</h3>
-      <p>Respeito, participação da comunidade e transparência no uso dos recursos.</p>
+  </template>
+
+  <template id="tpl-projetos">
+    <h1 tabindex="-1">Projetos sociais</h1>
+    <p>Atuamos em educação, meio ambiente e tecnologia. Você pode ajudar doando ou sendo voluntário.</p>
+    <section class="secao" aria-labelledby="em-andamento">
+      <h2 id="em-andamento">Projetos em andamento</h2>
+      <div class="grid lista-projetos"></div>
     </section>
-    <section id="como-ajudar">
-      <h2>Como ajudar</h2>
-      <p>Você pode doar materiais, apoiar financeiramente ou dedicar algumas horas por semana como voluntário.</p>
-      <a href="cadastro.html">Quero ser voluntário</a>
+    <section class="secao" aria-labelledby="transparencia">
+      <h2 id="transparencia">Transparência</h2>
+      <div class="grafico"><canvas id="grafico-recursos" role="img" aria-label="Aplicação dos recursos em 2025: 68% em atividades educativas, 22% em alimentação e 10% em administração."></canvas></div>
+      <table>
+        <caption>Aplicação dos recursos em 2025</caption>
+        <thead><tr><th scope="col">Destino</th><th scope="col">Percentual</th></tr></thead>
+        <tbody></tbody>
+      </table>
     </section>
-    <section id="contato">
-      <h2>Contato</h2>
-      <address>
-        <p>Rua das Acácias, 245, Bairro Esperança, Porto Alegre, RS, CEP 91000-000</p>
-        <p>Telefone: <a href="tel:+555130000000">(51) 3000-0000</a></p>
-        <p>E-mail: <a href="mailto:contato@semearfuturo.org.br">contato@semearfuturo.org.br</a></p>
-      </address>
-    </section>
-  </main>
-  <footer>
-    <p>Organização da sociedade civil sem fins lucrativos.</p>
-    <p><small>&copy; 2026 Semear Futuro. Todos os direitos reservados.</small></p>
-  </footer>
+  </template>
+
+  <template id="tpl-card-projeto">
+    <article class="card col-12 md-col-6 lg-col-4">
+      <picture>
+        <source type="image/webp">
+        <img width="600" height="400" loading="lazy" decoding="async" alt="">
+      </picture>
+      <div class="card-body">
+        <div class="card-badges"></div>
+        <h3 class="card-titulo"></h3>
+        <p class="card-descricao"></p>
+      </div>
+      <div class="card-actions">
+        <button class="btn" type="button">Quero ajudar</button>
+      </div>
+    </article>
+  </template>
+
+  <template id="tpl-badge"><span class="badge"></span></template>
+
+  <template id="tpl-alerta">
+    <div class="alerta">
+      <svg class="alerta__icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="11" fill="currentColor"/></svg>
+      <div><p class="alerta__titulo"></p><div class="alerta__conteudo"></div></div>
+    </div>
+  </template>
+
+  <template id="tpl-toast">
+    <div class="toast" role="status">
+      <span class="toast__mensagem"></span>
+      <button class="toast__fechar" type="button" aria-label="Fechar notificação">&times;</button>
+    </div>
+  </template>
+
+  <template id="tpl-cadastro">
+    <h1 tabindex="-1">Cadastro de voluntário</h1>
+    <p>Todos os campos são obrigatórios.</p>
+    <div class="grid">
+      <div class="col-12 lg-col-8 lg-start-3">
+        <div class="area-alertas"></div>
+        <form action="#" method="post" id="form-cadastro">
+          <fieldset>
+            <legend>Dados pessoais</legend>
+            <div class="form-field">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" minlength="3" maxlength="100" autocomplete="name" aria-describedby="erro-nome" required>
+              <span class="mensagem-erro" id="erro-nome"></span>
+            </div>
+            <div class="form-field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" maxlength="120" autocomplete="email" aria-describedby="erro-email" required>
+              <span class="mensagem-erro" id="erro-email"></span>
+            </div>
+            <div class="form-field">
+              <label for="nascimento">Data de nascimento</label>
+              <input type="date" id="nascimento" name="nascimento" min="1920-01-01" aria-describedby="erro-nascimento" required>
+              <span class="mensagem-erro" id="erro-nascimento"></span>
+            </div>
+            <div class="form-field">
+              <label for="cpf">CPF</label>
+              <input type="text" id="cpf" name="cpf" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" placeholder="000.000.000-00" aria-describedby="erro-cpf" data-mascara="cpf" required>
+              <span class="mensagem-erro" id="erro-cpf"></span>
+            </div>
+            <div class="form-field">
+              <label for="telefone">Telefone celular</label>
+              <input type="tel" id="telefone" name="telefone" pattern="\(\d{2}\) \d{5}-\d{4}" maxlength="15" placeholder="(00) 00000-0000" autocomplete="tel" aria-describedby="erro-telefone" data-mascara="telefone" required>
+              <span class="mensagem-erro" id="erro-telefone"></span>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Endereço</legend>
+            <div class="form-field">
+              <label for="cep">CEP</label>
+              <input type="text" id="cep" name="cep" inputmode="numeric" pattern="\d{5}-\d{3}" maxlength="9" placeholder="00000-000" autocomplete="postal-code" aria-describedby="erro-cep" data-mascara="cep" required>
+              <span class="mensagem-erro" id="erro-cep"></span>
+            </div>
+            <div class="form-field">
+              <label for="endereco">Endereço e número</label>
+              <input type="text" id="endereco" name="endereco" autocomplete="address-line1" aria-describedby="erro-endereco" required>
+              <span class="mensagem-erro" id="erro-endereco"></span>
+            </div>
+            <div class="form-field">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" autocomplete="address-level2" aria-describedby="erro-cidade" required>
+              <span class="mensagem-erro" id="erro-cidade"></span>
+            </div>
+            <div class="form-field">
+              <label for="estado">Estado</label>
+              <select id="estado" name="estado" aria-describedby="erro-estado" required>
+                <option value="">Selecione</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+              </select>
+              <span class="mensagem-erro" id="erro-estado"></span>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Como quero ajudar</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="interesse" value="doacao" required> Doação</label>
+              <label><input type="radio" name="interesse" value="voluntariado"> Voluntariado</label>
+              <label><input type="radio" name="interesse" value="ambos"> Ambos</label>
+            </div>
+            <span class="mensagem-erro" id="erro-interesse"></span>
+          </fieldset>
+          <fieldset>
+            <legend>Confirmação</legend>
+            <label class="checkbox"><input type="checkbox" name="consentimento" aria-describedby="erro-consentimento" required> Autorizo o uso dos meus dados para contato da Semear Futuro.</label>
+            <span class="mensagem-erro" id="erro-consentimento"></span>
+            <button class="btn" type="submit">Enviar cadastro</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </template>
+
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>

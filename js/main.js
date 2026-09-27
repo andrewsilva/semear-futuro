@@ -2,6 +2,7 @@ import { iniciarRouter, fecharMenu } from './router/router.js';
 import { iniciarModal, fecharModal } from './components/modal.js';
 import { iniciarToasts } from './components/toast.js';
 import { aoClicarQueroAjudar } from './views/projetos.js';
+import { ler, salvar } from './services/storage.js';
 
 function iniciarMenu() {
   const toggle = document.querySelector('.menu-toggle');
@@ -12,6 +13,16 @@ function iniciarMenu() {
   });
   document.querySelector('.nav-list').addEventListener('click', (event) => {
     if (event.target.closest('a')) fecharMenu();
+  });
+}
+
+function iniciarTema() {
+  const seletor = document.getElementById('tema');
+  seletor.value = ler('tema', 'automatico');
+  seletor.addEventListener('change', () => {
+    salvar('tema', seletor.value);
+    if (seletor.value === 'automatico') delete document.documentElement.dataset.tema;
+    else document.documentElement.dataset.tema = seletor.value;
   });
 }
 
@@ -33,6 +44,7 @@ document.addEventListener('keydown', (event) => {
 });
 
 iniciarMenu();
+iniciarTema();
 iniciarModal();
 iniciarToasts();
 iniciarDelegacao();

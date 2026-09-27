@@ -44,3 +44,79 @@
   --cor-foco: #1565C0;
   --foco: 3px solid var(--cor-foco);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema]) {
+    color-scheme: dark;
+    --cor-primaria: #66BB6A;
+    --cor-primaria-escura: #81C784;
+    --cor-primaria-clara: #1E3321;
+    --cor-sobre-primaria: #0B1F0D;
+    --cor-destaque: #90CAF9;
+    --cor-texto: #E6EAEE;
+    --cor-texto-suave: #AEB8C2;
+    --cor-borda: #3A444F;
+    --cor-borda-campo: #6B7785;
+    --cor-fundo: #14181D;
+    --cor-fundo-alt: #1E242B;
+    --cor-erro: #EF9A9A;
+    --cor-erro-clara: #3A1F1F;
+    --cor-aviso: #FFCC80;
+    --cor-aviso-clara: #3A2E1A;
+    --cor-info-clara: #1B2C3F;
+    --cor-foco: #90CAF9;
+  }
+}
+
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --cor-primaria: #66BB6A;
+  --cor-primaria-escura: #81C784;
+  --cor-primaria-clara: #1E3321;
+  --cor-sobre-primaria: #0B1F0D;
+  --cor-destaque: #90CAF9;
+  --cor-texto: #E6EAEE;
+  --cor-texto-suave: #AEB8C2;
+  --cor-borda: #3A444F;
+  --cor-borda-campo: #6B7785;
+  --cor-fundo: #14181D;
+  --cor-fundo-alt: #1E242B;
+  --cor-erro: #EF9A9A;
+  --cor-erro-clara: #3A1F1F;
+  --cor-aviso: #FFCC80;
+  --cor-aviso-clara: #3A2E1A;
+  --cor-info-clara: #1B2C3F;
+  --cor-foco: #90CAF9;
+}
+
+:root[data-tema="alto-contraste"] {
+  color-scheme: dark;
+  --cor-primaria: #FFFF00;
+  --cor-primaria-escura: #FFFFFF;
+  --cor-primaria-clara: #000000;
+  --cor-sobre-primaria: #000000;
+  --cor-secundaria: #FFFF00;
+  --cor-secundaria-hover: #FFFFFF;
+  --cor-destaque: #FFFF00;
+  --cor-texto: #FFFFFF;
+  --cor-texto-suave: #FFFFFF;
+  --cor-borda: #FFFFFF;
+  --cor-borda-campo: #FFFFFF;
+  --cor-fundo: #000000;
+  --cor-fundo-alt: #000000;
+  --cor-erro: #FF8A80;
+  --cor-erro-clara: #000000;
+  --cor-aviso: #FFFF00;
+  --cor-aviso-clara: #000000;
+  --cor-info-clara: #000000;
+  --cor-foco: #FFFF00;
+  --sombra-card: none;
+}
+
+@media (prefers-contrast: more) {
+  :root:not([data-tema]) {
+    --cor-texto-suave: var(--cor-texto);
+    --cor-borda: var(--cor-texto);
+    --cor-borda-campo: var(--cor-texto);
+  }
+}

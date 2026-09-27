@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ONG Semear Futuro: educação e tecnologia para crianças e adolescentes de Porto Alegre.">
   <title>Semear Futuro | Início</title>
+  <script>
+    try {
+      var tema = JSON.parse(localStorage.getItem('semear:tema'));
+      if (tema && tema !== 'automatico') document.documentElement.dataset.tema = tema;
+    } catch (e) {}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap">
@@ -16,6 +22,8 @@
   <link rel="icon" href="../img/logo-semear-futuro.png">
 </head>
 <body>
+  <a class="skip-link" href="#app">Pular para o conteúdo</a>
+
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="#/inicio" class="logo"><img src="../img/logo-semear-futuro.png" alt="Semear Futuro, página inicial" width="160" height="60"></a>
@@ -36,6 +44,15 @@
           <li><a href="#/cadastro" class="nav-destaque">Seja voluntário</a></li>
         </ul>
       </nav>
+      <div class="seletor-tema">
+        <label for="tema">Tema</label>
+        <select id="tema">
+          <option value="automatico">Automático</option>
+          <option value="claro">Claro</option>
+          <option value="escuro">Escuro</option>
+          <option value="alto-contraste">Alto contraste</option>
+        </select>
+      </div>
     </div>
   </header>
 

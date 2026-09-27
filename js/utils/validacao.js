@@ -11,7 +11,8 @@ export function cpfValido(valor) {
 
 export function idade(dataIso, hoje = new Date()) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(dataIso)) return -1;
-  const nascimento = new Date(dataIso);
+  const [ano, mes, dia] = dataIso.split('-').map(Number);
+  const nascimento = new Date(ano, mes - 1, dia);
   let anos = hoje.getFullYear() - nascimento.getFullYear();
   const aindaNaoFez = hoje.getMonth() < nascimento.getMonth()
     || (hoje.getMonth() === nascimento.getMonth() && hoje.getDate() < nascimento.getDate());

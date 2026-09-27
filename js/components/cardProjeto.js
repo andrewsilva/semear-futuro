@@ -5,7 +5,7 @@ const nomesCategoria = {
   vagas: 'Vagas abertas',
 };
 
-const imagem = (nome, formato) => new URL(`../../img/${nome}.${formato}`, import.meta.url).href;
+const imagens = (nome, largura, formato) => new URL(`../../img/${nome}-${largura}.${formato}`, import.meta.url).href;
 
 export function criarBadge(categoria) {
   const badge = document.getElementById('tpl-badge').content.firstElementChild.cloneNode(true);
@@ -19,9 +19,10 @@ export function criarCardProjeto(projeto, inscrito = false) {
   card.querySelector('.card-titulo').textContent = projeto.titulo;
   card.querySelector('.card-descricao').textContent = projeto.descricao;
 
-  card.querySelector('source').srcset = imagem(projeto.imagem, 'webp');
+  card.querySelector('source').srcset = `${imagens(projeto.imagem, 400, 'webp')} 400w, ${imagens(projeto.imagem, 800, 'webp')} 800w`;
   const img = card.querySelector('img');
-  img.src = imagem(projeto.imagem, 'jpg');
+  img.srcset = `${imagens(projeto.imagem, 400, 'jpg')} 400w, ${imagens(projeto.imagem, 800, 'jpg')} 800w`;
+  img.src = imagens(projeto.imagem, 800, 'jpg');
   img.alt = projeto.alt;
 
   const badges = card.querySelector('.card-badges');

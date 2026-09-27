@@ -12,7 +12,7 @@ body {
 }
 
 .site-header { grid-area: header; }
-main { grid-area: main; padding-block: var(--space-5) var(--space-7); }
+main { grid-area: main; padding-bottom: var(--space-7); }
 main:focus { outline: none; }
 .site-footer { grid-area: footer; }
 
@@ -24,6 +24,9 @@ h1:focus { outline: none; }
 p { max-width: 70ch; margin: 0 0 var(--space-3); }
 a { color: var(--cor-destaque); }
 img { max-width: 100%; height: auto; display: block; }
+figure { margin: 0; }
+figcaption { margin-top: var(--space-2); font-size: var(--fs-100); color: var(--cor-texto-suave); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 .container { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: var(--space-3); }
 
@@ -50,7 +53,7 @@ img { max-width: 100%; height: auto; display: block; }
 table { width: 100%; border-collapse: collapse; margin-top: var(--space-4); }
 caption { text-align: left; font-weight: 700; margin-bottom: var(--space-2); }
 th, td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--cor-borda); }
-.grafico { max-width: 320px; }
+
 
 @media (min-width: 576px) {
   .cta-group .btn { flex: 0 1 auto; }
@@ -58,15 +61,15 @@ th, td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom
 
 @media (min-width: 768px) {
   .md-col-6 { grid-column: span 6; }
-  .site-footer__inner { flex-direction: row; justify-content: space-between; align-items: flex-start; }
 }
 
 @media (min-width: 992px) {
   .lg-col-4 { grid-column: span 4; }
   .lg-col-5 { grid-column: span 5; }
+  .lg-col-6 { grid-column: span 6; }
   .lg-col-7 { grid-column: span 7; }
   .lg-col-8 { grid-column: span 8; }
-  .lg-start-3 { grid-column-start: 3; }
+  .lg-start-3 { grid-column: 3 / span 8; }
 }
 
 @media (min-width: 1200px) {
@@ -77,3 +80,9 @@ th, td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom
 @media (min-width: 1400px) {
   .container { max-width: 1200px; }
 }
+
+/* Seções da página */
+.cabecalho-pagina { padding-top: var(--space-6); }
+.secao__cabecalho { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-4); }
+.secao__cabecalho h2 { margin: 0; }
+.secao__cabecalho a { font-weight: 700; }
